@@ -1,3 +1,5 @@
+from dis import dis
+from xmlrpc.client import Boolean, boolean
 import numpy as np
 import re
 
@@ -13,7 +15,6 @@ def gerar_tabela_dist(G):
     distancias = re.findall("(\d+)\s+(\d+)\s+(\d+)", G.read())
     for arestas in distancias:
         Grafo[int(arestas[0])-1][int(arestas[1])-1] = arestas[2]
-
     return Grafo
 # grafo não direcionado
 
